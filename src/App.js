@@ -119,7 +119,7 @@ class App extends Component {
             })
             .catch(console.log);
         }
-        console.log("response", response);
+
         const api_data = response.outputs[0].data.regions[0].data.face;
         this.setState({ age: api_data.age_appearance.concepts[0].name });
         this.setState({ ai_age: api_data.age_appearance.concepts[0].name });
