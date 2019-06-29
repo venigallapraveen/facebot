@@ -2,3 +2,11 @@
   opacity: 1;
   transition: opacity 300ms ease-in-out;
 }
+
+img {
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
