@@ -5,6 +5,7 @@ const FaceRecognition = ({
   toggleModal,
   title,
   age,
+  ai_age,
   gender,
   type,
   imageUrl
@@ -23,12 +24,18 @@ const FaceRecognition = ({
           <div className="content">
             <div className="columns is-centered">
               <img
-                className="column is-half"
                 id="inputimage"
                 alt="search results"
                 src={imageUrl}
-                width="300px"
-                heigh="300px"
+                width="300"
+                height="300"
+                style={{
+                  display: "block",
+                  maxWidth: "300px",
+                  maxHeight: "300px",
+                  width: "auto",
+                  height: "auto"
+                }}
               />
             </div>
 
@@ -42,9 +49,10 @@ const FaceRecognition = ({
                     </span>
                   </th>
                   <td className="has-text-primary has-text-weight-semibold">
-                    {age}
+                    {ai_age}
                   </td>
                 </tr>
+
                 <tr>
                   <th>
                     Gender

@@ -18,6 +18,7 @@ const initialState = {
   age: "",
   gender: "",
   type: "",
+  ai_age: "",
 
   user: {
     id: "",
@@ -121,6 +122,7 @@ class App extends Component {
         console.log("response", response);
         const api_data = response.outputs[0].data.regions[0].data.face;
         this.setState({ age: api_data.age_appearance.concepts[0].name });
+        this.setState({ ai_age: api_data.age_appearance.concepts[0].name });
         this.setState({
           gender: api_data.gender_appearance.concepts[0].name
         });
@@ -188,6 +190,7 @@ class App extends Component {
                   toggleModal={this.toggleModalOnSeacrh}
                   imageUrl={imageUrl}
                   age={this.state.age}
+                  ai_age={this.state.ai_age}
                   gender={this.state.gender}
                   type={this.state.type}
                 />
