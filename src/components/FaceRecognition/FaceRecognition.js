@@ -29,6 +29,13 @@ const FaceRecognition = ({
                 src={imageUrl}
                 width="300"
                 height="300"
+                style={{
+                  display: "block",
+                  maxWidth: "300px",
+                  maxHeight: "300px",
+                  width: "auto",
+                  height: "auto"
+                }}
               />
             </div>
 
