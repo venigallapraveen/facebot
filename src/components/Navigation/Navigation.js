@@ -10,8 +10,8 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
     );
   } else {
     return (
-      <nav style={{ display: "flex", justifyContent: "flex-end" }}>
-        <p
+      <nav style={{ display: "flex", justifyContent: "center" }}>
+        {/* <p
           onClick={() => onRouteChange("signin")}
           className="f3 link dim black underline pa3 pointer"
         >
@@ -22,7 +22,13 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
           className="f3 link dim black underline pa3 pointer"
         >
           Register
-        </p>
+        </p> */}
+        <h1 className="f3 pa3 has-text-weight-bold has-text-primary">
+          Facebot
+          <span className="icon">
+            <i class="em em-brain" />
+          </span>
+        </h1>
       </nav>
     );
   }
