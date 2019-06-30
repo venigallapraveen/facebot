@@ -24,6 +24,7 @@ const FaceRecognition = ({
           <div className="content">
             <div className="columns is-centered">
               <img
+                className="column is-half"
                 id="inputimage"
                 alt="search results"
                 src={imageUrl}
