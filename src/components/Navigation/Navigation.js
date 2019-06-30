@@ -24,7 +24,11 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
           Register
         </p> */}
         <h1 className="f3 pa3 has-text-weight-bold has-text-primary">
-          Facebot
+          AI
+          <span className="has-text-black has-text-weight-medium">
+            {" "}
+            Facebot
+          </span>
           <span className="icon">
             <i class="em em-brain" />
           </span>
