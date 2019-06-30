@@ -1,6 +1,11 @@
 import React from "react";
 
-const ImageLinkForm = ({ onInputChange, onButtonSubmit, toggleModal }) => {
+const ImageLinkForm = ({
+  onInputChange,
+  onButtonSubmit,
+  toggleModal,
+  inputValue
+}) => {
   return (
     <div>
       <section id="home" className="section is-white is-fullheight">
@@ -25,6 +30,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit, toggleModal }) => {
                     id="mainInput"
                     className="input is-primary"
                     onChange={onInputChange}
+                    value={inputValue}
                     type="text"
                     placeholder="Paste the link here"
                   />

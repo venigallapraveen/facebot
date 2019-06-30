@@ -130,6 +130,9 @@ class App extends Component {
           type: api_data.multicultural_appearance.concepts[0].name
         });
       })
+      .then(() => {
+        this.setState({ input: "" });
+      })
       .catch(err => console.log(err));
   };
 
@@ -201,6 +204,7 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onButtonSubmit={this.onButtonSubmit}
               toggleModal={this.toggleModalOnSeacrh}
+              inputValue={this.state.input}
             />
           </div>
         ) : route === "signin" ? (
