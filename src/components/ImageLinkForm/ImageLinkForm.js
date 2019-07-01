@@ -1,4 +1,5 @@
 import React from "react";
+import FileBase64 from "../Base64/Base64";
 
 const ImageLinkForm = ({
   onInputChange,
@@ -25,16 +26,17 @@ const ImageLinkForm = ({
             </div>
             <div className="columns is-centered">
               <div className="field is-grouped">
-                <p className="control is-expanded">
-                  <input
+                <div className="control is-expanded">
+                  {/* <input
                     id="mainInput"
                     className="input is-primary"
                     onChange={onInputChange}
                     value={inputValue}
                     type="text"
                     placeholder="Paste the link here"
-                  />
-                </p>
+                  /> */}
+                  <FileBase64 multiple={true} onDone={onInputChange} />
+                </div>
                 <p className="control">
                   <button
                     className="button is-primary"
@@ -46,7 +48,7 @@ const ImageLinkForm = ({
                     <span className="icon">
                       <i className="fas fa-gavel" />
                     </span>
-                    <span>Smack</span>
+                    <span>Submit</span>
                   </button>
                 </p>
               </div>
@@ -58,9 +60,9 @@ const ImageLinkForm = ({
       <div className="section">
         <nav className="tabs is-boxed is-fullwidth">
           <div className="container">
-            <div class="tags is-centered has-addons">
-              <span class="tag is-dark">Key</span>
-              <span class="tag is-primary">Features</span>
+            <div className="tags is-centered has-addons">
+              <span className="tag is-light">Key</span>
+              <span className="tag is-primary">Features</span>
             </div>
 
             <h4 className="title is-5  has-text-weight-bold has-text-centered">

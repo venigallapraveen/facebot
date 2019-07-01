@@ -84,8 +84,10 @@ class App extends Component {
     });
   };
 
-  onInputChange = event => {
-    this.setState({ input: event.target.value });
+  onInputChange = file => {
+    // this.setState({ input: event.target.value });
+    this.setState({ input: file[0].base64 });
+    console.log(this.state.input);
   };
 
   onButtonSubmit = () => {

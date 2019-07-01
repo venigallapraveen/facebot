@@ -30,7 +30,7 @@ const Navigation = ({ onRouteChange, isSignedIn, toggleModal }) => {
             Facebot
           </span>
           <span className="icon">
-            <i class="em em-brain" />
+            <i className="em em-brain" />
           </span>
         </h1>
       </nav>
