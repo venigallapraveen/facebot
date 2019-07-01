@@ -58,11 +58,14 @@ const ImageLinkForm = ({
       <div className="section">
         <nav className="tabs is-boxed is-fullwidth">
           <div className="container">
-            <h4 className="subtitle has-text-primary is-5 has-text-weight-light has-text-centered arrow bounce">
-              Created By <i className="em em-point_down" />
-            </h4>
-            <h4 className="subtitle is-5  has-text-weight-medium has-text-centered">
-              Praveen Venigalla
+            <h1 className="is-5 has-text-weight-bold has-text-centered arrow bounce">
+              <span className="tag is-dark ma3">#KeyFeatures </span>
+            </h1>
+            <h4 className="title is-5  has-text-weight-bold has-text-centered">
+              <span className="tag is-primary  mr-3">#FaceScanner </span>
+              <span className="tag is-primary mr-3"> #Age </span>
+              <span className="tag is-primary mr-3"> #Gender </span>
+              <span className="tag is-primary mr-3"> #Ethnicity</span>
             </h4>
           </div>
         </nav>
