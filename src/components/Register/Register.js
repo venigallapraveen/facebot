@@ -26,7 +26,7 @@ class Register extends React.Component {
   onSubmitSignIn = () => {
     fetch("https://praveen-fserver.herokuapp.com/register", {
       method: "post",
-      headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS" },
+      headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS","mode": "no-cors" },
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
