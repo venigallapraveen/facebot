@@ -51,7 +51,7 @@ class Register extends React.Component {
             errorMessage: `Cmmn. It's not an exam. You gotta fill all those details.`
           });
         }
-      });
+      }).catch(err=>console.log(err);
   };
 
   render() {
