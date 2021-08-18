@@ -33,9 +33,11 @@ class Register extends React.Component {
         password: this.state.password,
         name: this.state.name
       })
-    })
-      .then(response => response.json())
-      .then(user => {
+    }).then(response => {
+  return response.text()
+}).then((data) => {
+  resolve(data ? JSON.parse(data) : {})
+}).then(user => {
         if (user.id) {
           this.setState({
             errorMessage: ""
