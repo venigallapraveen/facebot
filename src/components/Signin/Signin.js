@@ -32,9 +32,11 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     }).then(response => {
-  return response.text()
-}).then((data) => {
-  resolve(data ? JSON.parse(data) : {})
+   if (!response.ok) {
+       return response.text().then(result => Promise.reject(new Error(result)));
+    }
+
+    return response.json();
 }).then(data => {
         if (data && data.success === "true") {
           this.setState({
