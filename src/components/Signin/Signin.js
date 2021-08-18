@@ -24,8 +24,9 @@ class Signin extends React.Component {
 
   onSubmitSignIn = () => {
     fetch("https://praveen-fserver.herokuapp.com/signin", {
+       mode: "no-cors",
       method: "post",
-      headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS","mode": "no-cors"  },
+      headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS" },
       body: JSON.stringify({
         email: this.state.signInEmail,
         password: this.state.signInPassword
