@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from "../../utils/axios";
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -7,44 +7,44 @@ class Register extends React.Component {
       email: "",
       password: "",
       name: "",
-      errorMessage: ""
+      errorMessage: "",
     };
   }
 
-  onNameChange = event => {
+  onNameChange = (event) => {
     this.setState({ name: event.target.value });
   };
 
-  onEmailChange = event => {
+  onEmailChange = (event) => {
     this.setState({ email: event.target.value });
   };
 
-  onPasswordChange = event => {
+  onPasswordChange = (event) => {
     this.setState({ password: event.target.value });
   };
 
   onSubmitSignIn = () => {
-    fetch("https://praveen-fserver.herokuapp.com/register", {
-      method: "post",
-      headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS" },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-        name: this.state.name
-      })
-    }).then(response => response.json()).then(user => {
+    let body = {
+      email: this.state.email,
+      password: this.state.password,
+      name: this.state.name,
+    };
+    axios
+      .post("/register", body)
+      .then((response) => response.json())
+      .then((user) => {
         if (user.id) {
           this.setState({
-            errorMessage: ""
+            errorMessage: "",
           });
           this.props.loadUser(user);
           this.props.onRouteChange("home");
         } else {
           this.setState({
-            errorMessage: `Cmmn. It's not an exam. You gotta fill all those details.`
+            errorMessage: `Cmmn. It's not an exam. You gotta fill all those details.`,
           });
         }
-      })
+      });
   };
 
   render() {
