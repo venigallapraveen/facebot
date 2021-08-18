@@ -34,9 +34,11 @@ class Register extends React.Component {
         name: this.state.name
       })
     }).then(response => {
-  return response.text()
-}).then((data) => {
-  resolve(data ? JSON.parse(data) : {})
+   if (!response.ok) {
+       return response.text().then(result => Promise.reject(new Error(result)));
+    }
+
+    return response.json();
 }).then(user => {
         if (user.id) {
           this.setState({
