@@ -25,7 +25,7 @@ class Register extends React.Component {
 
   onSubmitSignIn = () => {
     fetch("https://praveen-fserver.herokuapp.com/register", {
-      mode: "no-cors",
+      mode: "cors",
       method: "post",
       headers: { "Content-Type": "application/json","Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS" },
       body: JSON.stringify({
@@ -33,13 +33,7 @@ class Register extends React.Component {
         password: this.state.password,
         name: this.state.name
       })
-    }).then(response => {
-   if (!response.ok) {
-       return response.text().then(result => Promise.reject(new Error(result)));
-    }
-
-    return response.json();
-}).then(user => {
+    }).then(response => response.json()).then(user => {
         if (user.id) {
           this.setState({
             errorMessage: ""
@@ -51,7 +45,7 @@ class Register extends React.Component {
             errorMessage: `Cmmn. It's not an exam. You gotta fill all those details.`
           });
         }
-      }).catch(err=>console.log(err);
+      })
   };
 
   render() {
