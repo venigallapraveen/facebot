@@ -31,9 +31,11 @@ class Signin extends React.Component {
         email: this.state.signInEmail,
         password: this.state.signInPassword
       })
-    })
-      .then(response => response.json())
-      .then(data => {
+    }).then(response => {
+  return response.text()
+}).then((data) => {
+  resolve(data ? JSON.parse(data) : {})
+}).then(data => {
         if (data && data.success === "true") {
           this.setState({
             errorMessage: ""
